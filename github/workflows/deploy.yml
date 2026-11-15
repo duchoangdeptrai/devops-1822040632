@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Job 1: Kiểm tra cấu trúc và thẻ HTML
   check:
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +37,6 @@ jobs:
           fi
           echo "OK: Thẻ <title> hợp lệ."
 
-  # Job 2: Chỉ deploy khi job check thành công
   deploy:
     needs: check
     runs-on: ubuntu-latest
